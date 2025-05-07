@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,11 +26,11 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
+					DEFAULT: '#003096', // Deep blue color from the website
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
+					DEFAULT: '#A51C30', // Red color from the website
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				destructive: {
@@ -89,6 +90,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			fontFamily: {
+				'serif': ['Georgia', 'Times New Roman', 'serif'],
+				'sans': ['Arial', 'Helvetica', 'sans-serif']
 			}
 		}
 	},
