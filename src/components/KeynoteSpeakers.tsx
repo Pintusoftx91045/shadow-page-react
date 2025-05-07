@@ -10,12 +10,18 @@ interface SpeakerProps {
 
 const SpeakerCard: React.FC<SpeakerProps> = ({ name, title, organization, imageSrc }) => {
   return (
-    <div className="profile-card">
-      <img src={imageSrc} alt={name} className="w-32 h-32 rounded-full object-cover" />
-      <h3 className="font-bold">{name}</h3>
-      <p className="text-sm text-gray-600">{title}</p>
-      <p className="text-sm text-gray-600">{organization}</p>
-      <a href="#" className="read-more-btn mt-2">Read More...</a>
+    <div className="profile-card bg-white p-6 rounded-lg shadow-md text-center">
+      <div className="mb-4">
+        <img 
+          src={imageSrc} 
+          alt={name} 
+          className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-primary"
+        />
+      </div>
+      <h3 className="font-bold text-lg text-primary">{name}</h3>
+      <p className="text-sm text-gray-600 mt-1">{title}</p>
+      <p className="text-sm text-gray-600 mb-3">{organization}</p>
+      <a href="#" className="read-more-btn text-secondary inline-block">Read More...</a>
     </div>
   );
 };
@@ -43,12 +49,14 @@ const KeynoteSpeakers = () => {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="symposium-container">
-        <h2 className="section-title">NISBRE 2024</h2>
-        <h3 className="text-xl font-bold text-center mb-12">Featured Keynote Speakers</h3>
+        <div className="text-center mb-12">
+          <h2 className="text-primary text-3xl font-bold mb-2">Featured Keynote Speakers</h2>
+          <div className="w-24 h-1 bg-secondary mx-auto"></div>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((speaker, index) => (
             <SpeakerCard 
               key={index}
